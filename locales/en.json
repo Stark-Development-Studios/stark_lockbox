@@ -1,0 +1,33 @@
+{
+    "error": {
+        "unsupported_radial_menu_title": "Unsupported Radial Menu",
+        "unsupported_radial_menu_description": "Your Radial Menu Script Is Not Currently Supported!",
+        "unsupported_menu_title": "Unsupported Menu UI",
+        "unsupported_menu_description": "Your Menu UI Is Not Currently Supported!",
+        "unsupported_inventory_title": "Unsupported Inventory",
+        "unsupported_inventory_description": "Your Inventory Script Is Not Currently Supported!",
+        "cancellation_title": "Cancelled",
+        "cancellation_description": "Cancelled Opening The Lockbox!",
+        "incorrect_job_title": "Incorrect Job",
+        "incorrect_job_description": "You Do Not Have The Correct Job!",
+        "incorrect_vehicle_title": "Incorrect Vehicle Class",
+        "incorrect_vehicle_description": "You Are Not In An Emergency Vehicle!",
+        "player_not_in_vehicle_title": "Not In Vehicle",
+        "player_not_in_vehicle_description": "You Are Not In A Vehicle Currently!",
+        "inventory_error_title": "Inventory Error",
+        "inventory_error_description": "Ox Inventory Was Not Started Correctly!"
+    },
+
+    "info": {
+        "command_help": "Opens The Secured Vehicle Lockbox",
+        "inventory_label": "Vehicle Lockbox",
+        "radial_menu_title": "Open Lockbox",
+        "vehicle_lockbox_menu_title": "Vehicle Lockbox",
+        "open_vehicle_lockbox_option_title": "Open Lockbox",
+        "close_vehicle_lockbox_option_title": "Close Lockbox",
+        "open_vehicle_lockbox_option_description": "Opens The Secured Vehicle Lockbox",
+        "close_vehicle_lockbox_option_description": "Closes The Secured Vehicle Lockbox",
+        "progress_name": "open_lock_box",
+        "progress_label": "Opening Lockbox..."
+    }
+}
