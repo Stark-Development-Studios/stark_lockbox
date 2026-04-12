@@ -6,6 +6,8 @@
         "unsupported_menu_description": "Your Menu UI Is Not Currently Supported!",
         "unsupported_inventory_title": "Unsupported Inventory",
         "unsupported_inventory_description": "Your Inventory Script Is Not Currently Supported!",
+        "unsupported_progress_type_title": "Unsupported Progress Type",
+        "unsupported_progress_type_description": "Your Progress Type Is Not Currently Supported!",
         "cancellation_title": "Cancelled",
         "cancellation_description": "Cancelled Opening The Lockbox!",
         "incorrect_job_title": "Incorrect Job",

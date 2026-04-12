@@ -3,11 +3,11 @@ return {
 
     Framework = 'qbx', -- supported: 'qbx' or 'qb'
 
-    Notify = 'lation', -- supported: 'qb', 'ox', or 'lation'
+    Notify = 'ox',     -- supported: 'qb', 'ox', or 'lation'
 
     Inventory = 'ox',  -- supported: 'qb', 'ps', or 'ox'
 
-    Radial = 'lation', -- supported: 'qb', 'ox', or 'lation'
+    Radial = 'ox',     -- supported: 'qb', 'ox', or 'lation'
 
     Progress = {
         enabled = false,
@@ -17,13 +17,13 @@ return {
 
     QbxProgress = {
         enabled = true,
-        type = 'lation', -- supported: 'ox_bar', 'ox_circle', or 'lation'
+        type = 'ox_circle', -- supported: 'ox_bar', 'ox_circle', or 'lation'
         duration = 2500
     },
 
     EnableMenu = true,      -- Whether You Wish To Use The Menu UI or Not
 
-    MenuUI = 'lation',      -- supported 'qb', 'ox', or 'lation'
+    MenuUI = 'ox',          -- supported 'qb', 'ox', or 'lation'
 
     LockboxSlots = 5,       -- Inventory Slots
 

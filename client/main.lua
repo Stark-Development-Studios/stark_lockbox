@@ -410,6 +410,27 @@ if Config.Framework == 'qb' then
                                     })
                                 end
                             end
+                        else
+                            if Config.Notify == 'qb' then
+                                QBCore.Functions.Notify(locale('error.unsupported_progress_type_description', 'error',
+                                    5000))
+                            elseif Config.Notify == 'ox' then
+                                lib.notify({
+                                    title = locale('error.unsupported_progress_type_title'),
+                                    description = locale('error.unsupported_progress_type_description'),
+                                    duration = 5000,
+                                    position = 'center-right',
+                                    type = 'error'
+                                })
+                            elseif Config.Notify == 'lation' then
+                                exports.lation_ui:notify({
+                                    title = locale('error.unsupported_progress_type_title'),
+                                    message = locale('error.unsupported_progress_type_description'),
+                                    type = 'error',
+                                    duration = 5000,
+                                    position = 'center-right'
+                                })
+                            end
                         end
                     else
                         -- Progress Not Enabled
@@ -769,6 +790,24 @@ if Config.Framework == 'qbx' then
                                         position = 'center-right'
                                     })
                                 end
+                            end
+                        else
+                            if Config.Notify == 'ox' then
+                                lib.notify({
+                                    title = locale('error.unsupported_progress_type_title'),
+                                    description = locale('error.unsupported_progress_type_description'),
+                                    duration = 5000,
+                                    position = 'center-right',
+                                    type = 'error'
+                                })
+                            elseif Config.Notify == 'lation' then
+                                exports.lation_ui:notify({
+                                    title = locale('error.unsupported_progress_type_title'),
+                                    message = locale('error.unsupported_progress_type_description'),
+                                    type = 'error',
+                                    duration = 5000,
+                                    position = 'center-right'
+                                })
                             end
                         end
                     else
