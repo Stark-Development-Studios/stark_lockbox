@@ -4,7 +4,7 @@
 I would like to thank the original developer for creating an excellent script for QBCore that allows players to utilize a locking storage in their PD vehicles enhancing law enforcement roleplay.
 
 ## SneakEOne
-I would like to thank fellow developer, SneakEOne, for his help, guidance, suggestions, and more in my conversion of this script to support more than one resource, allowing for more widespread use across all of FiveM.
+I would like to thank fellow FiveM developer, SneakEOne, for his help, guidance, suggestions, and more in my conversion of this script to support more than one resource, allowing for more widespread use across all of FiveM.
 
 ## QBCore
 I would like to thank the developers of QBCore for creating a solid RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
