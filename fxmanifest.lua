@@ -12,7 +12,7 @@ author 'Adama Stark'
 
 version '5.0.0'
 
-repository 'https://github.com/AdamaStark-N7/stark_lockbox'
+repository 'https://github.com/Stark-Development-Studios/stark_lockbox'
 
 description 'A Vehicle Lockbox Script for Qbox, QBCore, & ESX'
 
