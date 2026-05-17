@@ -1,33 +1,37 @@
+--[[
+    NOTE: Framework Default Notifications, Progress UIs, & Context Menus Must All Match The Chosen Framework.
+    For Example, qb-menu Is Only Supported By QBCore.
+    Please Ensure That Your Framework Variables Match, Otherwise There Will Be Errors In The Script.
+]]
+
 return {
+    Debug = true,
+
     VersionCheck = true,
 
-    Framework = 'qbx', -- supported: 'qbx' or 'qb'
+    Framework = 'qbx', -- supported: 'qb', 'qbx', or 'esx'
 
-    Notify = 'ox',     -- supported: 'qb', 'ox', or 'lation'
+    Notify = 'ox',     -- supported: 'qb', 'esx', 'ox', or 'lation'
 
-    Inventory = 'ox',  -- supported: 'qb', 'ps', or 'ox'
+    Inventory = 'ox',  -- supported: 'qb', 'ox', or 'ps'
 
     Radial = 'ox',     -- supported: 'qb', 'ox', or 'lation'
 
     Progress = {
-        enabled = false,
-        type = 'qb', -- supported: 'qb', 'ox_bar', 'ox_circle', or 'lation'
-        duration = 2500
+        framework = 'qbx',  -- supported: 'qb', 'qbx', or 'esx'
+        enabled = true,     -- True Enables Progress Functionality, False Disables It
+        type = 'ox_circle', -- supported: 'qb', 'esx', 'ox_bar', 'ox_circle', or 'lation'
+        duration = 2000
     },
 
-    QbxProgress = {
-        enabled = true,
-        type = 'ox_circle', -- supported: 'ox_bar', 'ox_circle', or 'lation'
-        duration = 2500
+    Menu = {
+        enabled = true, -- True Enables The Lockbox Menu, False Disables It
+        type = 'ox'     -- supported: 'qb', 'esx', 'ox', or 'lation'
     },
 
-    EnableMenu = true,      -- Whether You Wish To Use The Menu UI or Not
+    LockboxSlots = 5,       -- Number of Inventory Slots
 
-    MenuUI = 'ox',          -- supported 'qb', 'ox', or 'lation'
-
-    LockboxSlots = 5,       -- Inventory Slots
-
-    LockboxWeight = 120000, -- Inventory Weight
+    LockboxWeight = 120000, -- Max Inventory Weight
 
     PoliceJobs = {
         'police',
@@ -36,11 +40,11 @@ return {
         'bcso',
         'sast',
         'lscso'
-        -- add your server's police job here as found in qb-core/shared/jobs.lua or qbx_core/shared/jobs.lua
+        -- add your server's police job here
     },
 
     AmbulanceJobs = {
         'ambulance'
-        -- add your server's ambulance job here as found in qb-core/shared/jobs.lua or qbx_core/shared/jobs.lua
+        -- add your server's ambulance job here
     }
 }

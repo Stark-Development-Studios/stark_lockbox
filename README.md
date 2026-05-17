@@ -4,13 +4,16 @@
 I would like to thank the original developer for creating an excellent script for QBCore that allows players to utilize a locking storage in their PD vehicles enhancing law enforcement roleplay.
 
 ## SneakEOne
-I would like to thank fellow FiveM developer, SneakEOne, for his help, guidance, suggestions, and more in my conversion of this script to support more than one resource, allowing for more widespread use across all of FiveM.
+I would like to thank fellow developer, SneakEOne, for his help, guidance, suggestions, and more in my conversion of this script to support more than one resource, allowing for more widespread use across all of FiveM.
 
 ## QBCore
 I would like to thank the developers of QBCore for creating a solid RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
 
 ## Qbox
 I would also like to thank the developers of Qbox for creating a solid, alternative RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
+
+## ESX
+I would also like to thank the developers of ESX for creating a solid, alternative RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
 
 ## Overextended
 I would like to thank the amazing developers at Overextended for creating stellar resources in both Ox Inventory and Ox Lib.
@@ -36,21 +39,26 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 5. Add ```ensure stark_lockbox``` to your server.cfg
 6. Restart your server and enjoy!!
 7. For the Qbox Framework, please ensure that the config options are defaulted to ```'ox'```!
+8. For the ESX Framework, Only Ox Inventory Is Supported!
 
 # Features
-1. Unique Lockboxes for LEO or EMS to use in their vehicles
-2. Accessable by either the radial menu or a command: ```/lockbox```
+1. Unique Lockboxes for LEO or EMS to use in their vehicles.
+2. Accessable by using the selected radial menu.
 
 # Supported Frameworks
 1. QBCore
 2. Qbox
-3. ESX (COMING SOON!)
+3. ESX
 
 # Dependencies
 1. ox_lib
-2. qb-radialmenu, qbx_radialmenu, ox lib radial menu, or Lation Modern UI Radial Menu
-3. qb-inventory or ps-inventory (QBCore)
-4. ox_inventory (QBCore or Qbox)
+2. qb-radialmenu or qbx_radialmenu, ox lib radial menu, or Lation Modern UI Radial Menu
+3. qb-inventory or ps-inventory (QBCore Only)
+4. ox_inventory (QBCore, Qbox, or ESX)
+
+# Coming Soon
+1. Wasabi Scripts Complete UI Kit Support
+    - Preview or Purchase: [Wasabi Complete UI Kit](https://www.wasabiscripts.com/product/7037645)
 
 # Previews
 
@@ -66,11 +74,17 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 ## QB Menu
 ![Preview: QB Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_tzUq7qci0m.jpg)
 
+## ESX Menu
+![Preview: ESX Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_zhwY2RSaI3.jpg)
+
 ## Ox Lib Menu
 ![Preview: Ox Lib Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_cMXfzhDmr6.jpg)
 
 ## Lation Modern UI Menu
 ![Preview: Lation Modern UI Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_Th5O9QnxiO.jpg)
+
+## ESX Progress Bar
+![Preview: ESX Progress Bar](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_54uUXnnBNi.jpg)
 
 ## Ox Lib Progress Circle
 ![Preview: Ox Lib Progress Circle](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_LdjscHblke.jpg)

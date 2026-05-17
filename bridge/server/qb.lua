@@ -12,12 +12,13 @@ local ox_inventory = exports.ox_inventory
 
 if Config.Inventory == 'qb' then
     if qbInvState == 'started' and GetCurrentResourceName() then
-        RegisterNetEvent('stark_lockbox:server:OpenLockbox', function(stashLabel)
+        RegisterNetEvent('stark_lockbox:server:openLockbox', function(stashLabel)
             local src = source
-            exports['qb-inventory']:OpenInventory(src, stashLabel, {
-                maxweight = Config.LockboxWeight,
-                slots = Config.LockboxSlots
-            })
+            local name = stashLabel
+            local label = locale('info.inventory_label')
+            local weight = Config.LockboxWeight
+            local slots = Config.LockboxSlots
+            exports['qb-inventory']:OpenInventory(src, name, { label = label, maxweight = weight, slots = slots })
         end)
     end
 end
@@ -39,13 +40,6 @@ if Config.Inventory == 'ox' then
         end)
     end
 end
-
-lib.addCommand('lockbox', {
-    help = locale('info.command_help'),
-    restricted = false,
-}, function(source)
-    TriggerClientEvent('stark_lockbox:client:OpenLockbox', source)
-end)
 
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then

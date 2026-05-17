@@ -1,13 +1,13 @@
 ---@diagnostic disable: lowercase-global
 
-if GetResourceState('qbx_core') ~= 'started' then return end
+if GetResourceState('es_extended') ~= 'started' then return end
 
 local Config = require 'shared.config'
 
-local QBX = exports.qbx_core
+local ESX = exports['es_extended']:getSharedObject()
 
-function qbxCheckValidPoliceJob()
-    local PlayerData = QBX:GetPlayerData()
+function xCheckValidPoliceJob()
+    local PlayerData = ESX.GetPlayerData()
     if not PlayerData then return false end
     local currentJob = PlayerData.job
     if not currentJob then return false end
@@ -19,8 +19,8 @@ function qbxCheckValidPoliceJob()
     return false
 end
 
-function qbxCheckValidAmbulanceJob()
-    local PlayerData = QBX:GetPlayerData()
+function xCheckValidAmbulanceJob()
+    local PlayerData = ESX.GetPlayerData()
     if not PlayerData then return false end
     local currentJob = PlayerData.job
     if not currentJob then return false end
