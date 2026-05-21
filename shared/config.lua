@@ -35,16 +35,16 @@ return {
 
     PoliceJobs = {
         'police',
-        'lssd',
-        'sasp',
         'bcso',
+        'lscso',
+        'sasp',
         'sast',
-        'lscso'
         -- add your server's police job here
     },
 
     AmbulanceJobs = {
-        'ambulance'
+        'ambulance',
+        'sams',
         -- add your server's ambulance job here
     }
 }
