@@ -51,10 +51,13 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 3. ESX
 
 # Dependencies
-1. ox_lib
-2. qb-radialmenu or qbx_radialmenu, ox lib radial menu, or Lation Modern UI Radial Menu
-3. qb-inventory or ps-inventory (QBCore Only)
-4. ox_inventory (QBCore, Qbox, or ESX)
+1. [ox_lib](https://github.com/overextended/ox_lib/releases)
+2. [qb-radialmenu](https://github.com/qbcore-framework/qb-radialmenu) (QB)
+3. [qbx_radialmenu](https://github.com/Qbox-project/qbx_radialmenu) (QBX)
+4. Built In Ox Lib Radial Menu (QB, QBX, ESX)
+5. Lation Modern UI Radial Menu (QB, QBX, ESX)
+6. [qb-inventory](https://github.com/qbcore-framework/qb-inventory) or [ps-inventory](https://github.com/Project-Sloth/ps-inventory) (QB)
+7. [ox_inventory](https://github.com/overextended/ox_inventory/releases) (QBX or ESX)
 
 # Coming Soon
 1. Wasabi Scripts Complete UI Kit Support
