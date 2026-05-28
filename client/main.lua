@@ -1,4 +1,4 @@
-if not lib.checkDependency('ox_lib', '3.35.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.36.0', true) then return end
 
 local Config = require 'shared.config'
 
