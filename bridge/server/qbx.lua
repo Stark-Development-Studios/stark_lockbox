@@ -1,8 +1,8 @@
 if GetResourceState('qbx_core') ~= 'started' then return end
 
-if not lib.checkDependency('ox_lib', '3.36.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.37.0', true) then return end
 
-if not lib.checkDependency('ox_inventory', '2.47.3', true) then return end
+if not lib.checkDependency('ox_inventory', '2.47.5', true) then return end
 
 local Config = require 'shared.config'
 
