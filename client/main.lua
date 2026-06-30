@@ -119,7 +119,8 @@ if Config.Framework == 'qb' then
         elseif Config.Inventory == 'ps' then
             local weight = Config.LockboxWeight
             local slots = Config.LockboxSlots
-            TriggerServerEvent('ps-inventory:server:OpenInventory', 'stash', 'Vehicle Lockbox ' .. id, { maxweight = weight, slots = slots })
+            TriggerServerEvent('ps-inventory:server:OpenInventory', 'stash', 'Vehicle Lockbox ' .. id,
+                { maxweight = weight, slots = slots })
             TriggerEvent('ps-inventory:client:SetCurrentStash', 'Vehicle Lockbox ' .. id)
         elseif Config.Inventory == 'ox' then
             local ox_inventory = exports.ox_inventory
@@ -149,6 +150,30 @@ if Config.Framework == 'qb' then
         end
     end
 
+    local function onLockboxMenuClosed()
+        if Config.Notify == 'qb' then
+            QBCore.Functions.Notify(locale('success.lockbox_closed_success_description'), 'success', 5000)
+        elseif Config.Notify == 'ox' then
+            lib.notify({
+                title = locale('success.lockbox_closed_success_title'),
+                description = locale('success.lockbox_closed_success_description'),
+                duration = 5000,
+                position = 'center-right',
+                type = 'success'
+            })
+        elseif Config.Notify == 'lation' then
+            lation_ui:notify({
+                title = locale('success.lockbox_closed_success_title'),
+                message = locale('success.lockbox_closed_success_description'),
+                type = 'success',
+                duration = 5000,
+                position = 'center-right'
+            })
+        else
+            lib.print.error(locale('error.notification_warning'))
+        end
+    end
+
     local function openLockboxMenu()
         if Config.Menu.type == 'ox' then
             lib.registerContext({
@@ -171,6 +196,7 @@ if Config.Framework == 'qb' then
                         title = locale('info.close_vehicle_lockbox_option_title'),
                         onSelect = function()
                             lib.hideContext()
+                            onLockboxMenuClosed()
                         end,
                         icon = 'fa-solid fa-lock',
                         iconColor = 'white',
@@ -209,6 +235,7 @@ if Config.Framework == 'qb' then
                         arrow = true,
                         onSelect = function()
                             lation_ui:hideMenu()
+                            onLockboxMenuClosed()
                         end
                     }
                 }
@@ -236,6 +263,7 @@ if Config.Framework == 'qb' then
                     icon = 'fa-solid fa-lock',
                     action = function()
                         exports['qb-menu']:closeMenu()
+                        onLockboxMenuClosed()
                     end
                 }
             }
@@ -617,6 +645,28 @@ if Config.Framework == 'qbx' then
         end
     end
 
+    local function onLockboxMenuClosed()
+        if Config.Notify == 'ox' then
+            lib.notify({
+                title = locale('success.lockbox_closed_success_title'),
+                description = locale('success.lockbox_closed_success_description'),
+                duration = 5000,
+                position = 'center-right',
+                type = 'success'
+            })
+        elseif Config.Notify == 'lation' then
+            lation_ui:notify({
+                title = locale('success.lockbox_closed_success_title'),
+                message = locale('success.lockbox_closed_success_description'),
+                type = 'success',
+                duration = 5000,
+                position = 'center-right'
+            })
+        else
+            lib.print.error(locale('error.notification_warning'))
+        end
+    end
+
     local function openLockboxMenu()
         if Config.Menu.type == 'ox' then
             lib.registerContext({
@@ -639,6 +689,7 @@ if Config.Framework == 'qbx' then
                         title = locale('info.close_vehicle_lockbox_option_title'),
                         onSelect = function()
                             lib.hideContext()
+                            onLockboxMenuClosed()
                         end,
                         icon = 'fa-solid fa-lock',
                         iconColor = 'white',
@@ -677,6 +728,7 @@ if Config.Framework == 'qbx' then
                         arrow = true,
                         onSelect = function()
                             lation_ui:hideMenu()
+                            onLockboxMenuClosed()
                         end
                     }
                 }
@@ -1040,6 +1092,30 @@ if Config.Framework == 'esx' then
         end
     end
 
+    local function onLockboxMenuClosed()
+        if Config.Notify == 'esx' then
+            ESX.ShowNotification(locale('success.lockbox_closed_success_description'), 'success', 5000)
+        elseif Config.Notify == 'ox' then
+            lib.notify({
+                title = locale('success.lockbox_closed_success_title'),
+                description = locale('success.lockbox_closed_success_description'),
+                duration = 5000,
+                position = 'center-right',
+                type = 'success'
+            })
+        elseif Config.Notify == 'lation' then
+            lation_ui:notify({
+                title = locale('success.lockbox_closed_success_title'),
+                message = locale('success.lockbox_closed_success_description'),
+                type = 'success',
+                duration = 5000,
+                position = 'center-right'
+            })
+        else
+            lib.print.error(locale('error.notification_warning'))
+        end
+    end
+
     local function openLockboxMenu()
         if Config.Menu.type == 'esx' then
             local menuOptions = {
@@ -1058,6 +1134,7 @@ if Config.Framework == 'esx' then
                 ESX.CloseContext()
             end, function()
                 ESX.CloseContext()
+                onLockboxMenuClosed()
             end, true)
         elseif Config.Menu.type == 'ox' then
             lib.registerContext({
@@ -1080,6 +1157,7 @@ if Config.Framework == 'esx' then
                         title = locale('info.close_vehicle_lockbox_option_title'),
                         onSelect = function()
                             lib.hideContext()
+                            onLockboxMenuClosed()
                         end,
                         icon = 'fa-solid fa-lock',
                         iconColor = 'white',
@@ -1118,6 +1196,7 @@ if Config.Framework == 'esx' then
                         arrow = true,
                         onSelect = function()
                             lation_ui:hideMenu()
+                            onLockboxMenuClosed()
                         end
                     }
                 }
