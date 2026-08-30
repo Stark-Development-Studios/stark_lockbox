@@ -1,6 +1,6 @@
 if GetResourceState('qb-core') ~= 'started' or GetResourceState('qbx_core') == 'started' then return end
 
-if not lib.checkDependency('ox_lib', '3.38.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.39.0', true) then return end
 
 local Config = require 'shared.config'
 
@@ -24,7 +24,7 @@ if Config.Inventory == 'qb' then
 end
 
 if Config.Inventory == 'ox' then
-    if not lib.checkDependency('ox_inventory', '2.47.8', true) then return end
+    if not lib.checkDependency('ox_inventory', '2.47.9', true) then return end
 
     if oxInvState == 'started' and GetCurrentResourceName() then
         local lockbox = {
