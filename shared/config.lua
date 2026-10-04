@@ -11,13 +11,13 @@ return {
 
     EnforceCurrentVersion = false, -- Highly Recommended That This Is Set To True, False Allows For Older Versions To Be Used
 
-    Framework = 'qbx', -- supported: 'qb', 'qbx', or 'esx'
+    Framework = 'qbx',             -- supported: 'qb', 'qbx', or 'esx'
 
-    Notify = 'ox',     -- supported: 'qb', 'esx', 'ox', or 'lation'
+    Notify = 'ox',                 -- supported: 'qb', 'esx', 'ox', or 'lation'
 
-    Inventory = 'ox',  -- supported: 'qb', 'ox', or 'ps'
+    Inventory = 'ox',              -- supported: 'qb', 'ox', or 'ps'
 
-    Radial = 'ox',     -- supported: 'qb', 'ox', or 'lation'
+    Radial = 'ox',                 -- supported: 'qb', 'ox', or 'lation'
 
     Keybind = {
         enabled = false,
@@ -40,7 +40,7 @@ return {
 
     LockboxWeight = 120000, -- Max Inventory Weight
 
-    KeepInventory = false, -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
+    KeepInventory = false,  -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
 
     PoliceJobs = {
         'police',
