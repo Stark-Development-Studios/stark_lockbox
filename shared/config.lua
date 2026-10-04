@@ -5,13 +5,13 @@
 ]]
 
 return {
-    Debug = false,
+    Debug = true,
 
     VersionCheck = true,
 
     EnforceCurrentVersion = false, -- Highly Recommended That This Is Set To True, False Allows For Older Versions To Be Used
 
-    Framework = 'qbx',             -- supported: 'qb', 'qbx', or 'esx'
+    -- Framework = 'qbx',             -- supported: 'qb', 'qbx', or 'esx'
 
     Notify = 'ox',                 -- supported: 'qb', 'esx', 'ox', or 'lation'
 

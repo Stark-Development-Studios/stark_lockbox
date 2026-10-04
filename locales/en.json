@@ -36,7 +36,9 @@
     "open_vehicle_lockbox_option_description": "Opens The Secured Vehicle Lockbox",
     "close_vehicle_lockbox_option_description": "Closes The Secured Vehicle Lockbox",
     "progress_name": "open_lock_box",
-    "progress_label": "Opening Lockbox..."
+    "progress_label": "Opening Lockbox...",
+    "keybind_name": "open_lock_box",
+    "keybind_description": "Press To Open An Emergency Vehicle's Lockbox."
   },
 
   "success": {

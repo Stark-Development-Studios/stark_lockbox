@@ -1,8 +1,25 @@
-if not lib.checkDependency('ox_lib', '3.39.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.40.0', true) then return end
 
 local Config = require 'shared.config'
 
-if Config.Framework == 'qb' then
+Framework = nil
+
+if GetResourceState('es_extended') == 'started' then
+    Framework = 'esx'
+elseif GetResourceState('qb-core') == 'started' and GetResourceState('qbx_core') ~= 'started' then
+    Framework = 'qb'
+elseif GetResourceState('qbx_core') == 'started' then
+    Framework = 'qbx'
+else
+    Framework = nil
+    lib.print.error(locale('error.framework_warning'))
+end
+
+if Config.Debug then
+    lib.print.info('[stark_lockbox] Framework Detected: ' .. tostring(Framework))
+end
+
+if Framework == 'qb' then
     local QBCore = exports['qb-core']:GetCoreObject()
 
     local lation_ui = exports.lation_ui
@@ -98,14 +115,18 @@ if Config.Framework == 'qb' then
         end
     end
 
-    RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
-        updateRadialMenu()
-    end)
-
-    if Config.Radial == 'ox' or Config.Radial == 'lation' then
-        lib.onCache('vehicle', function()
+    if not Config.Keybind.enabled then
+        RegisterNetEvent('qb-radialmenu:client:onRadialmenuOpen', function()
             updateRadialMenu()
         end)
+    end
+
+    if Config.Radial == 'ox' or Config.Radial == 'lation' then
+        if not Config.Keybind.enabled then
+            lib.onCache('vehicle', function()
+                updateRadialMenu()
+            end)
+        end
     end
 
     local function openLockboxInventory()
@@ -176,38 +197,64 @@ if Config.Framework == 'qb' then
 
     local function openLockboxMenu()
         if Config.Menu.type == 'ox' then
+            local menuOptions = {
+                {
+                    title = locale('info.open_vehicle_lockbox_option_title'),
+                    onSelect = function()
+                        openLockboxInventory()
+                    end,
+                    icon = 'fa-solid fa-unlock',
+                    iconColor = 'white',
+                    arrow = true,
+                    description = locale('info.open_vehicle_lockbox_option_description')
+                },
+                {
+                    title = locale('info.close_vehicle_lockbox_option_title'),
+                    onSelect = function()
+                        lib.hideContext()
+                        onLockboxMenuClosed()
+                    end,
+                    icon = 'fa-solid fa-lock',
+                    iconColor = 'white',
+                    arrow = true,
+                    description = locale('info.close_vehicle_lockbox_option_description')
+                },
+            }
+
             lib.registerContext({
                 id = 'vehicle_lockbox_menu',
                 title = locale('info.vehicle_lockbox_menu_title'),
                 position = 'top-right',
                 canClose = false,
-                options = {
-                    {
-                        title = locale('info.open_vehicle_lockbox_option_title'),
-                        onSelect = function()
-                            openLockboxInventory()
-                        end,
-                        icon = 'fa-solid fa-unlock',
-                        iconColor = 'white',
-                        arrow = true,
-                        description = locale('info.open_vehicle_lockbox_option_description')
-                    },
-                    {
-                        title = locale('info.close_vehicle_lockbox_option_title'),
-                        onSelect = function()
-                            lib.hideContext()
-                            onLockboxMenuClosed()
-                        end,
-                        icon = 'fa-solid fa-lock',
-                        iconColor = 'white',
-                        arrow = true,
-                        description = locale('info.close_vehicle_lockbox_option_description')
-                    }
-                }
+                options = menuOptions
             })
 
             lib.showContext('vehicle_lockbox_menu')
         elseif Config.Menu.type == 'lation' then
+            local menuOptions = {
+                {
+                    title = locale('info.open_vehicle_lockbox_option_title'),
+                    icon = 'fa-solid fa-unlock',
+                    iconColor = '#FFFFFF',
+                    description = locale('info.open_vehicle_lockbox_option_description'),
+                    arrow = true,
+                    onSelect = function()
+                        openLockboxInventory()
+                    end
+                },
+                {
+                    title = locale('info.close_vehicle_lockbox_option_title'),
+                    icon = 'fa-solid fa-lock',
+                    iconColor = '#FFFFFF',
+                    description = locale('info.close_vehicle_lockbox_option_description'),
+                    arrow = true,
+                    onSelect = function()
+                        lation_ui:hideMenu()
+                        onLockboxMenuClosed()
+                    end
+                },
+            }
+
             lation_ui:registerMenu({
                 id = 'vehicle_lockbox_menu',
                 title = locale('info.vehicle_lockbox_menu_title'),
@@ -216,29 +263,7 @@ if Config.Framework == 'qb' then
                 headerIconColor = '#0000FF',
                 canClose = false,
                 position = 'offcenter-right',
-                options = {
-                    {
-                        title = locale('info.open_vehicle_lockbox_option_title'),
-                        icon = 'fas fa-lock-open',
-                        iconColor = '#FFFFFF',
-                        description = locale('info.open_vehicle_lockbox_option_description'),
-                        arrow = true,
-                        onSelect = function()
-                            openLockboxInventory()
-                        end
-                    },
-                    {
-                        title = locale('info.close_vehicle_lockbox_option_title'),
-                        icon = 'fas fa-lock',
-                        iconColor = '#FFFFFF',
-                        description = locale('info.close_vehicle_lockbox_option_description'),
-                        arrow = true,
-                        onSelect = function()
-                            lation_ui:hideMenu()
-                            onLockboxMenuClosed()
-                        end
-                    }
-                }
+                options = menuOptions
             })
 
             lation_ui:showMenu('vehicle_lockbox_menu')
@@ -311,7 +336,7 @@ if Config.Framework == 'qb' then
             local vehicleType = GetVehicleClass(vehicle)
             if vehicleType == 18 then
                 if qbCheckValidPoliceJob() or qbCheckValidAmbulanceJob() then
-                    if Config.Framework == 'qb' and Config.Progress.framework == 'qb' then
+                    if Framework == 'qb' and Config.Progress.framework == 'qb' then
                         if Config.Progress.enabled then
                             if Config.Progress.type == 'qb' then
                                 QBCore.Functions.Progressbar(locale('info.progress_name'), locale('info.progress_label'),
@@ -532,9 +557,22 @@ if Config.Framework == 'qb' then
             end
         end
     end)
+
+    if Config.Keybind.enabled then
+        lib.addKeybind({
+            name = locale('info.keybind_name'),
+            description = locale('info.keybind_description'),
+            defaultKey = Config.Keybind.control,
+            allowInPauseMenu = false,
+            disabled = false,
+            onPressed = function()
+                TriggerEvent('stark_lockbox:client:openLockbox')
+            end
+        })
+    end
 end
 
-if Config.Framework == 'qbx' then
+if Framework == 'qbx' then
     local lation_ui = exports.lation_ui
 
     local function addRadialLockboxOption()
@@ -775,7 +813,7 @@ if Config.Framework == 'qbx' then
             local vehicleType = GetVehicleClass(vehicle)
             if vehicleType == 18 then
                 if qbxCheckValidPoliceJob() or qbxCheckValidAmbulanceJob() then
-                    if Config.Framework == 'qbx' and Config.Progress.framework == 'qbx' then
+                    if Framework == 'qbx' and Config.Progress.framework == 'qbx' then
                         if Config.Progress.enabled then
                             if Config.Progress.type == 'ox_bar' then
                                 if lib.progressBar({
@@ -975,7 +1013,7 @@ if Config.Framework == 'qbx' then
     end)
 end
 
-if Config.Framework == 'esx' then
+if Framework == 'esx' then
     local ESX = exports['es_extended']:getSharedObject()
 
     local lation_ui = exports.lation_ui
@@ -1245,7 +1283,7 @@ if Config.Framework == 'esx' then
             local vehicleType = GetVehicleClass(vehicle)
             if vehicleType == 18 then
                 if xCheckValidPoliceJob() or xCheckValidAmbulanceJob() then
-                    if Config.Framework == 'esx' and Config.Progress.framework == 'esx' then
+                    if Framework == 'esx' and Config.Progress.framework == 'esx' then
                         if Config.Progress.enabled then
                             if Config.Progress.type == 'esx' then
                                 ESX.Progressbar(locale('info.progress_label'), Config.Progress.duration, {
