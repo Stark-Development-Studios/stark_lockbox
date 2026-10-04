@@ -1,105 +1,138 @@
 # Acknowledgements
 
 ## KobenJM21
+
 I would like to thank the original developer for creating an excellent script for QBCore that allows players to utilize a locking storage in their PD vehicles enhancing law enforcement roleplay.
 
 ## SneakEOne
+
 I would like to thank fellow developer, SneakEOne, for his help, guidance, suggestions, and more in my conversion of this script to support more than one resource, allowing for more widespread use across all of FiveM.
 
 ## QBCore
+
 I would like to thank the developers of QBCore for creating a solid RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
 
 ## Qbox
+
 I would also like to thank the developers of Qbox for creating a solid, alternative RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
 
 ## ESX
+
 I would also like to thank the developers of ESX for creating a solid, alternative RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
 
 ## Overextended
+
 I would like to thank the amazing developers at Overextended for creating stellar resources in both Ox Inventory and Ox Lib.
 
 ## Community Ox
+
 I would like to thank the team at Community Ox for continuing on with Overextended's legacy by maintaining their resources for future use with Five M development.
 
 ## Lation
+
 I would like to thank Lation for developing a clean and sophisticated UI interface for FiveM which I am proud to directly support in this resource.
 
 Lation's UI interface can be purchased here from his Tebex!
 
-* Link: [Lation Modern UI](https://lationscripts.com/product/modern-ui).
+- Link: [Lation Modern UI](https://lationscripts.com/product/modern-ui).
 
 # Description
+
 Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking storage in their vehicles that only they can acccess, keeping vital law enforcement or medical equipment safe from others while enhancing QOL and gameplay experience.
 
 ## Installation
+
 1. Add stark_lockbox to your resources folder for your server
 2. Be sure to remove the '-main' from the end of the folder name
 3. Customize the script to your liking in the Config!
-4. Add ```setr ox:locale en``` to your server.cfg
-5. Add ```ensure stark_lockbox``` to your server.cfg
+4. Add `setr ox:locale en` to your server.cfg
+5. Add `ensure stark_lockbox` to your server.cfg
 6. Restart your server and enjoy!!
-7. For the Qbox Framework, please ensure that the config options are defaulted to ```'ox'```!
+7. For the Qbox Framework, please ensure that the config options are defaulted to `'ox'`!
 8. For the ESX Framework, Only Ox Inventory Is Supported!
 
 # Features
+
 1. Unique Lockboxes for LEO or EMS to use in their vehicles.
-2. Accessable by using the selected radial menu.
+2. Lockboxes are accessed by either using the selected radial menu or via a configurable keybind.
 
 # Supported Frameworks
+
 1. QBCore
 2. Qbox
 3. ESX
 
 # Dependencies
+
 1. [ox_lib](https://github.com/overextended/ox_lib/releases)
-2. [qb-radialmenu](https://github.com/qbcore-framework/qb-radialmenu) (QB)
+2. [qb-radialmenu](https://github.com/qbcore-fivem/qb-radialmenu) (QB)
 3. [qbx_radialmenu](https://github.com/Qbox-project/qbx_radialmenu) (QBX)
 4. Built In Ox Lib Radial Menu (QB, QBX, ESX)
 5. Lation Modern UI Radial Menu (QB, QBX, ESX)
-6. [qb-inventory](https://github.com/qbcore-framework/qb-inventory) or [ps-inventory](https://github.com/Project-Sloth/ps-inventory) (QB)
+6. [qb-inventory](https://github.com/qbcore-fivem/qb-inventory) or [ps-inventory](https://github.com/Project-Sloth/ps-inventory) (QB)
 7. [ox_inventory](https://github.com/overextended/ox_inventory/releases) (QBX or ESX)
 
+# Developer's Notes
+
+- The script now features a configurable option to not enforce the current version of Ox Inventory as released by the Overextended team. The purpose of this option is to allow server owners to still be able to use this resource with older versions of Ox Inventory, or to use this resource with versions of Ox Inventory that were customized by a third party which feature custom UIs and/or custom functionalities. It is still strongly recommended by us to use the latest version of Ox Inventory for server security purposes, bug fixes, new functionalities, and overall player experience.
+
+- For Ox Inventory only, the script now features a configurable option to allow both LEOs and EMS to keep what is currently stored in their vehicle lockboxes. Previously after a server restart, the lockbox inventory would be wiped for purposes of roleplay realism. Now the option to clear the inventory is configurable by the server owner to allow both LEOs and EMS to keep what is stored in their vehicle lockboxes. This is useful for servers that allow both LEOs and EMS to own their own emergency vehicles, while the previous option was for emergency vehicles that were spawned server side, but they were not owned by the player.
+
 # Coming Soon
+
 1. Wasabi Scripts Complete UI Kit Support
-    - Preview or Purchase: [Wasabi Complete UI Kit](https://www.wasabiscripts.com/product/7037645)
+   - Preview or Purchase: [Wasabi Complete UI Kit](https://www.wasabiscripts.com/product/7037645)
 
 # Previews
 
 ## QB Radial Menu
+
 ![Preview: QB Radial Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/QB_RadialMenu_Preview.jpg)
 
 ## Ox Lib Radial Menu
+
 ![Preview: Ox Lib Radial Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/Ox_Lib_RadialMenu_Preview.jpg)
 
 ## Lation Modern UI Radial Menu
+
 ![Preview: Lation Modern UI Radial Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_b3407_GTAProcess_ulaPDvwUth.jpg)
 
 ## QB Menu
+
 ![Preview: QB Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_tzUq7qci0m.jpg)
 
 ## ESX Menu
+
 ![Preview: ESX Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_zhwY2RSaI3.jpg)
 
 ## Ox Lib Menu
+
 ![Preview: Ox Lib Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_cMXfzhDmr6.jpg)
 
 ## Lation Modern UI Menu
+
 ![Preview: Lation Modern UI Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_Th5O9QnxiO.jpg)
 
 ## ESX Progress Bar
+
 ![Preview: ESX Progress Bar](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_54uUXnnBNi.jpg)
 
 ## Ox Lib Progress Circle
+
 ![Preview: Ox Lib Progress Circle](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_LdjscHblke.jpg)
 
 ## Lation Modern UI Progress Bar
+
 ![Preview: Lation Modern UI Progress Bar](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_6x9cOLwyCc.jpg)
 
 ## QB Inventory
+
 ![Preview: QB Inventory Vehicle Locbox](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_b3407_GTAProcess_msZDAg5HME.jpg)
 
 ## PS Inventory
+
 ![Preview: PS Inventory Vehicle Lockbox](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_b3407_GTAProcess_YtFKiB6btu.png)
 
 ## Ox Inventory
+
 ![Preview: Ox Inventory Vehicle Lockbox](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_UqHip3pCOx.jpg)

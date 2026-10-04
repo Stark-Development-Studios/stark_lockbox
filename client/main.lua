@@ -290,7 +290,7 @@ if Framework == 'qb' then
                         exports['qb-menu']:closeMenu()
                         onLockboxMenuClosed()
                     end
-                }
+                },
             }
 
             exports['qb-menu']:openMenu(lockboxMenu)
@@ -652,9 +652,11 @@ if Framework == 'qbx' then
         end
     end
 
-    lib.onCache('vehicle', function()
-        updateRadial()
-    end)
+    if not Config.Keybind.enabled then
+        lib.onCache('vehicle', function()
+            updateRadial()
+        end)
+    end
 
     local function openLockboxInventory()
         if GetResourceState('ox_inventory') ~= 'started' or not GetCurrentResourceName() then
@@ -707,38 +709,64 @@ if Framework == 'qbx' then
 
     local function openLockboxMenu()
         if Config.Menu.type == 'ox' then
+            local menuOptions = {
+                {
+                    title = locale('info.open_vehicle_lockbox_option_title'),
+                    onSelect = function()
+                        openLockboxInventory()
+                    end,
+                    icon = 'fa-solid fa-unlock',
+                    iconColor = 'white',
+                    arrow = true,
+                    description = locale('info.open_vehicle_lockbox_option_description')
+                },
+                {
+                    title = locale('info.close_vehicle_lockbox_option_title'),
+                    onSelect = function()
+                        lib.hideContext()
+                        onLockboxMenuClosed()
+                    end,
+                    icon = 'fa-solid fa-lock',
+                    iconColor = 'white',
+                    arrow = true,
+                    description = locale('info.close_vehicle_lockbox_option_description')
+                },
+            }
+
             lib.registerContext({
                 id = 'vehicle_lockbox_menu',
                 title = locale('info.vehicle_lockbox_menu_title'),
                 position = 'top-right',
                 canClose = false,
-                options = {
-                    {
-                        title = locale('info.open_vehicle_lockbox_option_title'),
-                        onSelect = function()
-                            openLockboxInventory()
-                        end,
-                        icon = 'fa-solid fa-unlock',
-                        iconColor = 'white',
-                        arrow = true,
-                        description = locale('info.open_vehicle_lockbox_option_description')
-                    },
-                    {
-                        title = locale('info.close_vehicle_lockbox_option_title'),
-                        onSelect = function()
-                            lib.hideContext()
-                            onLockboxMenuClosed()
-                        end,
-                        icon = 'fa-solid fa-lock',
-                        iconColor = 'white',
-                        arrow = true,
-                        description = locale('info.close_vehicle_lockbox_option_description')
-                    }
-                }
+                options = menuOptions
             })
 
             lib.showContext('vehicle_lockbox_menu')
         elseif Config.Menu.type == 'lation' then
+            local menuOptions = {
+                {
+                    title = locale('info.open_vehicle_lockbox_option_title'),
+                    icon = 'fa-solid fa-unlock',
+                    iconColor = '#FFFFFF',
+                    description = locale('info.open_vehicle_lockbox_option_description'),
+                    arrow = true,
+                    onSelect = function()
+                        openLockboxInventory()
+                    end
+                },
+                {
+                    title = locale('info.close_vehicle_lockbox_option_title'),
+                    icon = 'fa-solid fa-lock',
+                    iconColor = '#FFFFFF',
+                    description = locale('info.close_vehicle_lockbox_option_description'),
+                    arrow = true,
+                    onSelect = function()
+                        lation_ui:hideMenu()
+                        onLockboxMenuClosed()
+                    end
+                },
+            }
+
             lation_ui:registerMenu({
                 id = 'vehicle_lockbox_menu',
                 title = locale('info.vehicle_lockbox_menu_title'),
@@ -747,29 +775,7 @@ if Framework == 'qbx' then
                 headerIconColor = '#0000FF',
                 canClose = false,
                 position = 'offcenter-right',
-                options = {
-                    {
-                        title = locale('info.open_vehicle_lockbox_option_title'),
-                        icon = 'fas fa-lock-open',
-                        iconColor = '#FFFFFF',
-                        description = locale('info.open_vehicle_lockbox_option_description'),
-                        arrow = true,
-                        onSelect = function()
-                            openLockboxInventory()
-                        end
-                    },
-                    {
-                        title = locale('info.close_vehicle_lockbox_option_title'),
-                        icon = 'fas fa-lock',
-                        iconColor = '#FFFFFF',
-                        description = locale('info.close_vehicle_lockbox_option_description'),
-                        arrow = true,
-                        onSelect = function()
-                            lation_ui:hideMenu()
-                            onLockboxMenuClosed()
-                        end
-                    }
-                }
+                options = menuOptions
             })
 
             lation_ui:showMenu('vehicle_lockbox_menu')
@@ -1011,6 +1017,19 @@ if Framework == 'qbx' then
             end
         end
     end)
+
+    if Config.Keybind.enabled then
+        lib.addKeybind({
+            name = locale('info.keybind_name'),
+            description = locale('info.keybind_description'),
+            defaultKey = Config.Keybind.control,
+            allowInPauseMenu = false,
+            disabled = false,
+            onPressed = function()
+                TriggerEvent('stark_lockbox:client:openLockbox')
+            end
+        })
+    end
 end
 
 if Framework == 'esx' then
