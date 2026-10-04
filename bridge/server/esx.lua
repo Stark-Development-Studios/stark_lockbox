@@ -7,6 +7,10 @@ local Config = require 'shared.config'
 -- Allows For Older Versions/Modified Versions Of Ox Inventory To Be Used
 if Config.EnforceCurrentVersion then
     if not lib.checkDependency('ox_inventory', '2.48.0', true) then return end
+else
+    if Config.Debug then
+        lib.print.error(locale('error.current_version_not_enforced'))
+    end
 end
 
 local oxInvState = GetResourceState('ox_inventory')
@@ -35,4 +39,8 @@ if not Config.KeepInventory then
             ox_inventory:ClearInventory('vehicle_lockbox')
         end
     end)
+else
+    if Config.Debug then
+        lib.print.error(locale('error.keep_inventory_not_enabled'))
+    end
 end
