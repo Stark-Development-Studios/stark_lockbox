@@ -1,6 +1,6 @@
 if GetResourceState('qb-core') ~= 'started' or GetResourceState('qbx_core') == 'started' then return end
 
-if not lib.checkDependency('ox_lib', '3.39.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.40.0', true) then return end
 
 local Config = require 'shared.config'
 
@@ -24,7 +24,10 @@ if Config.Inventory == 'qb' then
 end
 
 if Config.Inventory == 'ox' then
-    if not lib.checkDependency('ox_inventory', '2.47.9', true) then return end
+    -- Allows For Older Versions/Modified Versions Of Ox Inventory To Be Used
+    if Config.EnforceCurrentVersion then
+        if not lib.checkDependency('ox_inventory', '2.48.0', true) then return end
+    end
 
     if oxInvState == 'started' and GetCurrentResourceName() then
         local lockbox = {
@@ -41,12 +44,12 @@ if Config.Inventory == 'ox' then
             end
         end)
     end
-end
 
-AddEventHandler('onResourceStart', function(resource)
-    if resource == GetCurrentResourceName() then
-        if Config.Inventory == 'ox' then
-            ox_inventory:ClearInventory('vehicle_lockbox')
-        end
+    if not Config.KeepInventory then
+        AddEventHandler('onResourceStart', function(resourceName)
+            if resourceName == GetCurrentResourceName() then
+                ox_inventory:ClearInventory('vehicle_lockbox')
+            end
+        end)
     end
-end)
+end

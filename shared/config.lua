@@ -5,9 +5,11 @@
 ]]
 
 return {
-    Debug = true,
+    Debug = false,
 
     VersionCheck = true,
+
+    EnforceCurrentVersion = false, -- Highly Recommended That This Is Set To True, False Allows For Older Versions To Be Used
 
     Framework = 'qbx', -- supported: 'qb', 'qbx', or 'esx'
 
@@ -16,6 +18,11 @@ return {
     Inventory = 'ox',  -- supported: 'qb', 'ox', or 'ps'
 
     Radial = 'ox',     -- supported: 'qb', 'ox', or 'lation'
+
+    Keybind = {
+        enabled = false,
+        control = 'RSHIFT' -- https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
+    },
 
     Progress = {
         framework = 'qbx',  -- supported: 'qb', 'qbx', or 'esx'
@@ -33,12 +40,15 @@ return {
 
     LockboxWeight = 120000, -- Max Inventory Weight
 
+    KeepInventory = false, -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
+
     PoliceJobs = {
         'police',
         'bcso',
         'lscso',
         'sasp',
         'sast',
+        'sahp',
         -- add your server's police job here
     },
 
