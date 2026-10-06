@@ -10,7 +10,7 @@ name 'stark_lockbox'
 
 author 'Adama Stark'
 
-version '5.1.4b'
+version '5.2.0'
 
 repository 'https://github.com/Stark-Development-Studios/stark_lockbox'
 
