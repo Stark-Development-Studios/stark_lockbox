@@ -5,13 +5,11 @@
 ]]
 
 return {
-    Debug = true,
+    Debug = false,
 
     VersionCheck = true,
 
     EnforceCurrentVersion = false, -- Highly Recommended That This Is Set To True, False Allows For Older Versions To Be Used
-
-    -- Framework = 'qbx',             -- supported: 'qb', 'qbx', or 'esx'
 
     Notify = 'ox',                 -- supported: 'qb', 'esx', 'ox', or 'lation'
 
@@ -27,20 +25,20 @@ return {
     Progress = {
         framework = 'qbx',  -- supported: 'qb', 'qbx', or 'esx'
         enabled = true,     -- True Enables Progress Functionality, False Disables It
-        type = 'ox_circle', -- supported: 'qb', 'esx', 'ox_bar', 'ox_circle', or 'lation'
+        type = 'ox_bar', -- supported: 'qb', 'esx', 'ox_bar', 'ox_circle', or 'lation'
         duration = 2000
     },
 
     Menu = {
-        enabled = true, -- True Enables The Lockbox Menu, False Disables It
+        enabled = false, -- True Enables The Lockbox Menu, False Disables It
         type = 'ox'     -- supported: 'qb', 'esx', 'ox', or 'lation'
     },
 
-    LockboxSlots = 5,       -- Number of Inventory Slots
+    LockboxSlots = 6,       -- Number of Inventory Slots
 
     LockboxWeight = 120000, -- Max Inventory Weight
 
-    KeepInventory = false,  -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
+    KeepInventory = true,  -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
 
     PoliceJobs = {
         'police',
