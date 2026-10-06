@@ -140,8 +140,7 @@ if Framework == 'qb' then
         elseif Config.Inventory == 'ps' then
             local weight = Config.LockboxWeight
             local slots = Config.LockboxSlots
-            TriggerServerEvent('ps-inventory:server:OpenInventory', 'stash', 'Vehicle Lockbox ' .. id,
-                { maxweight = weight, slots = slots })
+            TriggerServerEvent('ps-inventory:server:OpenInventory', 'stash', 'Vehicle Lockbox ' .. id, { maxweight = weight, slots = slots })
             TriggerEvent('ps-inventory:client:SetCurrentStash', 'Vehicle Lockbox ' .. id)
         elseif Config.Inventory == 'ox' then
             local ox_inventory = exports.ox_inventory

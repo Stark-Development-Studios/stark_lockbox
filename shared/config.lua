@@ -23,22 +23,22 @@ return {
     },
 
     Progress = {
-        framework = 'qbx',  -- supported: 'qb', 'qbx', or 'esx'
-        enabled = true,     -- True Enables Progress Functionality, False Disables It
-        type = 'ox_bar', -- supported: 'qb', 'esx', 'ox_bar', 'ox_circle', or 'lation'
+        framework = 'qbx', -- supported: 'qb', 'qbx', or 'esx'
+        enabled = true,    -- True Enables Progress Functionality, False Disables It
+        type = 'ox_bar',   -- supported: 'qb', 'esx', 'ox_bar', 'ox_circle', or 'lation'
         duration = 2000
     },
 
     Menu = {
         enabled = false, -- True Enables The Lockbox Menu, False Disables It
-        type = 'ox'     -- supported: 'qb', 'esx', 'ox', or 'lation'
+        type = 'ox'      -- supported: 'qb', 'esx', 'ox', or 'lation'
     },
 
     LockboxSlots = 6,       -- Number of Inventory Slots
 
     LockboxWeight = 120000, -- Max Inventory Weight
 
-    KeepInventory = true,  -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
+    KeepInventory = true,   -- Ox Inventory Only: True Maintains What Is Stored In The Lockbox; False Clears The Inventory When The Script Is Restarted
 
     PoliceJobs = {
         'police',
