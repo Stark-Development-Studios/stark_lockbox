@@ -11,11 +11,11 @@ return {
 
     EnforceCurrentVersion = false, -- Highly Recommended That This Is Set To True, False Allows For Older Versions To Be Used
 
-    Notify = 'ox',                 -- supported: 'qb', 'esx', 'ox', or 'lation'
+    Notify = 'ox',                 -- supported: 'esx', 'ox', or 'lation'
 
-    Inventory = 'ox',              -- supported: 'qb', 'ox', or 'ps'
+    Inventory = 'ox',              -- supported: 'ox'
 
-    Radial = 'ox',                 -- supported: 'qb', 'ox', or 'lation'
+    Radial = 'ox',                 -- supported: 'ox' or 'lation'
 
     Keybind = {
         enabled = false,
@@ -23,15 +23,15 @@ return {
     },
 
     Progress = {
-        framework = 'qbx', -- supported: 'qb', 'qbx', or 'esx'
+        framework = 'qbx', -- supported: 'qbx' or 'esx'
         enabled = true,    -- True Enables Progress Functionality, False Disables It
-        type = 'ox_bar',   -- supported: 'qb', 'esx', 'ox_bar', 'ox_circle', or 'lation'
+        type = 'ox_bar',   -- supported: 'esx', 'ox_bar', 'ox_circle', or 'lation'
         duration = 2000
     },
 
     Menu = {
         enabled = false, -- True Enables The Lockbox Menu, False Disables It
-        type = 'ox'      -- supported: 'qb', 'esx', 'ox', or 'lation'
+        type = 'ox'      -- supported: 'esx', 'ox', or 'lation'
     },
 
     LockboxSlots = 6,       -- Number of Inventory Slots
@@ -46,13 +46,14 @@ return {
         'lscso',
         'sasp',
         'sast',
-        'sahp',
+        'sahp'
         -- add your server's police job here
     },
 
     AmbulanceJobs = {
         'ambulance',
         'sams',
+        'safr'
         -- add your server's ambulance job here
     }
 }

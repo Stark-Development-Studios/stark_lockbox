@@ -8,10 +8,6 @@ I would like to thank the original developer for creating an excellent script fo
 
 I would like to thank fellow developer, SneakEOne, for his help, guidance, suggestions, and more in my conversion of this script to support more than one resource, allowing for more widespread use across all of FiveM.
 
-## QBCore
-
-I would like to thank the developers of QBCore for creating a solid RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
-
 ## Qbox
 
 I would also like to thank the developers of Qbox for creating a solid, alternative RP framework for FiveM servers that allows for easy development of scripts to enhance gameplay.
@@ -58,19 +54,16 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 
 # Supported Frameworks
 
-1. QBCore
-2. Qbox
-3. ESX
+1. Qbox (Recommended)
+2. ESX
 
 # Dependencies
 
 1. [ox_lib](https://github.com/overextended/ox_lib/releases)
-2. [qb-radialmenu](https://github.com/qbcore-fivem/qb-radialmenu) (QB)
-3. [qbx_radialmenu](https://github.com/Qbox-project/qbx_radialmenu) (QBX)
-4. Built In Ox Lib Radial Menu (QB, QBX, ESX)
-5. Lation Modern UI Radial Menu (QB, QBX, ESX)
-6. [qb-inventory](https://github.com/qbcore-fivem/qb-inventory) or [ps-inventory](https://github.com/Project-Sloth/ps-inventory) (QB)
-7. [ox_inventory](https://github.com/overextended/ox_inventory/releases) (QBX or ESX)
+2. [qbx_radialmenu](https://github.com/Qbox-project/qbx_radialmenu) (QBX)
+3. Built In Ox Lib Radial Menu (QB, QBX, ESX)
+4. Lation Modern UI Radial Menu (QB, QBX, ESX)
+5. [ox_inventory](https://github.com/overextended/ox_inventory/releases) (QBX or ESX)
 
 # Developer's Notes
 
@@ -85,10 +78,6 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 
 # Previews
 
-## QB Radial Menu
-
-![Preview: QB Radial Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/QB_RadialMenu_Preview.jpg)
-
 ## Ox Lib Radial Menu
 
 ![Preview: Ox Lib Radial Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/Ox_Lib_RadialMenu_Preview.jpg)
@@ -96,10 +85,6 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 ## Lation Modern UI Radial Menu
 
 ![Preview: Lation Modern UI Radial Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_b3407_GTAProcess_ulaPDvwUth.jpg)
-
-## QB Menu
-
-![Preview: QB Menu](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_tzUq7qci0m.jpg)
 
 ## ESX Menu
 
@@ -124,14 +109,6 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 ## Lation Modern UI Progress Bar
 
 ![Preview: Lation Modern UI Progress Bar](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_GTAProcess_6x9cOLwyCc.jpg)
-
-## QB Inventory
-
-![Preview: QB Inventory Vehicle Locbox](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_b3407_GTAProcess_msZDAg5HME.jpg)
-
-## PS Inventory
-
-![Preview: PS Inventory Vehicle Lockbox](https://r2.fivemanage.com/BZUhJPECnmtuNrWqUmCYy/FiveM_b3407_GTAProcess_YtFKiB6btu.png)
 
 ## Ox Inventory
 

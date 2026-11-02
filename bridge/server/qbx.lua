@@ -1,12 +1,12 @@
 if GetResourceState('qbx_core') ~= 'started' then return end
 
-if not lib.checkDependency('ox_lib', '3.40.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.42.0', true) then return end
 
 local Config = require 'shared.config'
 
 -- Allows For Older Versions/Modified Versions Of Ox Inventory To Be Used
 if Config.EnforceCurrentVersion then
-    if not lib.checkDependency('ox_inventory', '2.48.0', true) then return end
+    if not lib.checkDependency('ox_inventory', '2.48.1', true) then return end
 else
     if Config.Debug then
         lib.print.error(locale('error.current_version_not_enforced'))

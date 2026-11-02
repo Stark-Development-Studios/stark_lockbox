@@ -1,17 +1,15 @@
-if not lib.checkDependency('ox_lib', '3.40.0', true) then return end
+if not lib.checkDependency('ox_lib', '3.42.0', true) then return end
 
 local Config = require 'shared.config'
 
 if Config.VersionCheck then
-    lib.versionCheck('Stark-Development-Studios/stark_lockbox')
+    lib.versionCheck('AdamaStark-N7/stark_lockbox')
 end
 
 Framework = nil
 
 if GetResourceState('es_extended') == 'started' then
     Framework = 'ESX'
-elseif GetResourceState('qb-core') == 'started' and GetResourceState('qbx_core') ~= 'started' then
-    Framework = 'qb'
 elseif GetResourceState('qbx_core') == 'started' then
     Framework = 'qbx'
 else
