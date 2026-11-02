@@ -61,8 +61,8 @@ Stark Lockbox is a resource that allows both LEO & EMS to utilize a locking stor
 
 1. [ox_lib](https://github.com/overextended/ox_lib/releases)
 2. [qbx_radialmenu](https://github.com/Qbox-project/qbx_radialmenu) (QBX)
-3. Built In Ox Lib Radial Menu (QB, QBX, ESX)
-4. Lation Modern UI Radial Menu (QB, QBX, ESX)
+3. Built In Ox Lib Radial Menu (QBX or ESX)
+4. Lation Modern UI Radial Menu (QBX or ESX)
 5. [ox_inventory](https://github.com/overextended/ox_inventory/releases) (QBX or ESX)
 
 # Developer's Notes
